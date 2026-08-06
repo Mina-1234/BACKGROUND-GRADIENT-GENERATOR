@@ -4,74 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Background Gradient Generator</h1>
     <div class="s">
+        <div class="two">
+            <h3>For Two Colour Gradient</h3>
         <button class="btn1">click</button>
+        </div>
+        <div class="three">
+        <h3>For Three Colour Gradient</h3>
         <button class="btn2">click</button>
-
+        </div>
+        <div class="four">
+        <h3>For Radial Gradient Generate</h3>
+        <button class="btn3">click</button>
+        </div>
+        <div class="five">
+        <h3>For Random Degree Gradient</h3>
+        <button class="btn4">click</button>
+        </div>
+        <div class="six">
+        <h3>For Creative Gradient Generate</h3>
+        <button class="btn5">click</button>
+        </div>
     </div>
+    
     <h2>Copy to clipboard</h2>
     <section>
     <div class="copyCode">
-    Background-image: linear-gradient(to right,rgb(92,145,229),rgb(152,63,198))
+    background: linear-gradient(90deg, rgba(155, 42, 97, 1) 0%, rgba(96, 87, 199, 1) 50%, rgba(183, 83, 237, 1) 100%);
         </div>
     
    </section>
-
-   <script>
-    let btn1=document.querySelector(".btn1");
-    let btn2=document.querySelector(".btn2");
-    let copydiv=document.querySelector(".copyCode");
-    
-    const hexValue = () =>{
-       let hex="0123456789ABCDEF";
-       let colors="#";
-       for (let i=0;i<6;i++){
-       colors=colors+hex[Math.floor(Math.random()*16)];
-       }
-       return colors;
-    };
-
-    const colorValue=()=>{
-        let colour=Math.floor(Math.random()*255);
-        let colour1=Math.floor(Math.random()*255);
-        let colour2=Math.floor(Math.random()*255);
-        colour3=`rgb(${colour},${colour1},${colour2})`;
-        return colour3;
-
-    }
-
-
-    const handleBtn1 = ()=>{
-        let rgb1=hexValue();
-        let rgb2=hexValue();
-        let rgb3=hexValue();
-        let rgb4=hexValue();
-        console.log(rgb1);
-        document.body.style.backgroundImage=
-        `linear-gradient(to right, ${rgb1},${rgb2})`;
-        btn1.textContent=`${rgb1}`;
-        copydiv.innerHTML=`Background-image: linear-gradient(to right,${rgb1},${rgb2})`;
-
-        
-    }
-    const handleBtn2 = ()=>{
-        let rgb1=hexValue();
-        let rgb2=hexValue();
-        console.log(rgb2);
-         document.body.style.backgroundImage=
-        `linear-gradient(to right, ${rgb2},${rgb1})`
-         btn2.textContent=`${rgb2}`;
-         copydiv.innerHTML=`Background-image: linear-gradient(to right,${rgb1},${rgb2})`;
-
-        
-        
-    };
-    btn1.addEventListener("click",handleBtn1);
-    btn2.addEventListener("click",handleBtn2);
-
-   </script>
+   <section class="download"><button class="downPng">Download</button></section>
+   <script src="script.js">   </script>
 </body>
 </html>
